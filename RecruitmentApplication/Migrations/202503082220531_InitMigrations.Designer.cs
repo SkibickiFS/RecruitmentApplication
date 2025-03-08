@@ -5,13 +5,13 @@ using System.Data.Entity.Migrations.Infrastructure;
 using System.Resources;
 
 [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-public sealed partial class Init : IMigrationMetadata
+public sealed partial class InitMigrations : IMigrationMetadata
 {
-    private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
+    private readonly ResourceManager Resources = new ResourceManager(typeof(InitMigrations));
     
     string IMigrationMetadata.Id
     {
-        get { return "202503070938543_Init"; }
+        get { return "202503082220531_InitMigrations"; }
     }
     
     string IMigrationMetadata.Source

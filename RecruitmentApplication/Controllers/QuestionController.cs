@@ -1,4 +1,5 @@
 using RecruitmentApplication.Repositories;
+using RecruitmentApplication.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System;

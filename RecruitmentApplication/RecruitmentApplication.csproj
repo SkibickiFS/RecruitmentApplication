@@ -134,13 +134,14 @@
     <Compile Include="Helpers\Translations\PolishTranslationStrategy.cs" />
     <Compile Include="Helpers\Translations\Settings.cs" />
     <Compile Include="Helpers\Translations\TranslationContext.cs" />
-    <Compile Include="Migrations\202503070938543_Init.cs" />
-    <Compile Include="Migrations\202503070938543_Init.Designer.cs">
-      <DependentUpon>202503070938543_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202503082220531_InitMigrations.cs" />
+    <Compile Include="Migrations\202503082220531_InitMigrations.Designer.cs">
+      <DependentUpon>202503082220531_InitMigrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Data\Configuration.cs" />
     <Compile Include="Models\Permission.cs" />
+    <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\RecruitmentDbContext.cs" />
     <Compile Include="Models\Role.cs" />
@@ -185,8 +186,8 @@
     <Compile Include="UserInterface\RecruiterForm.Designer.cs">
       <DependentUpon>RecruiterForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202503070938543_Init.resx">
-      <DependentUpon>202503070938543_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202503082220531_InitMigrations.resx">
+      <DependentUpon>202503082220531_InitMigrations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\RecruiterForm.resx">
       <DependentUpon>RecruiterForm.cs</DependentUpon>

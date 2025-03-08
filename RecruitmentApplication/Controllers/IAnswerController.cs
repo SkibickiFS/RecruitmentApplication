@@ -1,3 +1,4 @@
+using RecruitmentApplication.Models;
 using System.Collections.Generic;
 
 namespace RecruitmentApplication.Controllers

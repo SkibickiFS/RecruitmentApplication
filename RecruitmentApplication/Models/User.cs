@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace RecruitmentApplication.Models
 {
     public class User
@@ -7,5 +9,10 @@ namespace RecruitmentApplication.Models
         public string Password { get; set; }
         public int RoleId { get; set; }
         public Role Role { get; set; }
+
+        public int? PositionId { get; set; }
+        public Position Position { get; set; }
+
+        public virtual ICollection<Answer> Answers { get; set; } 
     }
 }

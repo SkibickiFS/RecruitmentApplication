@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using RecruitmentApplication.Helpers;
+using RecruitmentApplication.Models;
 
 namespace RecruitmentApplication.Controllers
 {

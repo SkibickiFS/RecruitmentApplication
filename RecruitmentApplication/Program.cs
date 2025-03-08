@@ -32,7 +32,7 @@ namespace RecruitmentApplication
                 logger.Error(args.Exception, "Unhandled thread exception");
             };
 
-            //DatabaseInitializer.InitializeDatabase();
+            DatabaseInitializer.InitializeDatabase();
 
             Application.Run(mainForm);
         }

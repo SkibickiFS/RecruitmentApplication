@@ -15,6 +15,7 @@ namespace RecruitmentApplication.Models
         public DbSet<Answer> Answers { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Permission> Permissions { get; set; }
+        public DbSet<Position> Positions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -25,15 +26,35 @@ namespace RecruitmentApplication.Models
                 .WithMany()
                 .HasForeignKey(u => u.RoleId);
 
+            modelBuilder.Entity<User>()
+                .HasOptional(u => u.Position)
+                .WithMany(p => p.Users)
+                .HasForeignKey(u => u.PositionId);
+
             modelBuilder.Entity<Question>()
                 .Property(q => q.Text)
                 .IsRequired()
-                .HasMaxLength(500);
+                .HasMaxLength(4000);
+
+            modelBuilder.Entity<Question>()
+                .HasRequired(q => q.Position)
+                .WithMany(p => p.Questions)
+                .HasForeignKey(q => q.PositionId);
+
+            modelBuilder.Entity<Question>()
+                .HasMany(q => q.Answers)
+                .WithRequired(a => a.Question)
+                .HasForeignKey(a => a.QuestionId);
 
             modelBuilder.Entity<Answer>()
                 .Property(a => a.AnswerText)
                 .IsRequired()
-                .HasMaxLength(500);
+                .HasMaxLength(8000);
+
+            modelBuilder.Entity<Answer>()
+                .HasRequired(a => a.User)
+                .WithMany(u => u.Answers)
+                .HasForeignKey(a => a.UserId);
 
             modelBuilder.Entity<Role>()
                 .Property(r => r.Name)
@@ -53,7 +74,7 @@ namespace RecruitmentApplication.Models
             modelBuilder.Entity<Permission>()
                 .Property(p => p.Name)
                 .IsRequired()
-                .HasMaxLength(100); 
+                .HasMaxLength(100);
         }
     }
 }

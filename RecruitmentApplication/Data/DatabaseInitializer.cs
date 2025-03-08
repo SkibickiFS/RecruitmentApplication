@@ -21,7 +21,21 @@ namespace RecruitmentApplication
 
             using (var context = new RecruitmentDbContext())
             {
-                context.Database.Initialize(true);
+                if (!context.Database.Exists())
+                {
+                    Logger.Info("Database does not exist. Creating database and applying migrations.");
+                    context.Database.Initialize(true);
+                }
+                else if (!context.Database.CompatibleWithModel(false))
+                {
+                    Logger.Info("Database exists but is not compatible with the model. Applying migrations.");
+                    var migrator = new DbMigrator(new Configuration());
+                    migrator.Update();
+                }
+                else
+                {
+                    Logger.Info("Database exists and is compatible with the model. No migrations needed.");
+                }
             }
 
             _isInitialized = true;

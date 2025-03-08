@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using NLog;
 using OfficeOpenXml;
+using RecruitmentApplication.Models;
 
 namespace RecruitmentApplication.Helpers
 {
@@ -23,7 +24,7 @@ namespace RecruitmentApplication.Helpers
 
                     for (int i = 0; i < answers.Count; i++)
                     {
-                        worksheet.Cells[i + 2, 1].Value = answers[i].QuestionText;
+                        worksheet.Cells[i + 2, 1].Value = answers[i].Question.Text;
                         worksheet.Cells[i + 2, 2].Value = answers[i].AnswerText;
                     }
 
