@@ -8,9 +8,9 @@ namespace RecruitmentApplication.Controllers
     {
         private readonly ExcelSaver _excelSaver;
 
-        public AnswerController()
+        public AnswerController(ExcelSaver excelSaver)
         {
-            _excelSaver = new ExcelSaver();
+            _excelSaver = excelSaver;
         }
 
         public void SaveAnswers(List<Answer> answers, string filePath)
